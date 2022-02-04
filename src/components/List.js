@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import ListContent from "./ListContent";
 import Form from "./Form/Form";
@@ -19,7 +18,7 @@ const List = () => {
   };
   const deletePost = (i) => {
     setPosts(
-      posts.filter((index) => {
+      posts.filter((post, index) => {
         return index !== Number(i);
       })
     );
