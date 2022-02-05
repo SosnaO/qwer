@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ListContent from "./ListContent";
+import ListItem from "./ListItem";
 import Form from "./Form/Form";
 
 const List = () => {
@@ -37,13 +37,13 @@ const List = () => {
 
   return (
     <ul style={{ border: "2px solid red", margin: "5px" }}>
-      <ListContent
+      <ListItem
         content={posts}
         upPost={upPost}
         downPost={downPost}
         deletePost={deletePost}
       />
-      <li style={{ listStyleType: "none" }}>
+      <li>
         <Form setPost={setPost} post={post} addPost={addPost} />
       </li>
     </ul>

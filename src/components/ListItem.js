@@ -1,11 +1,11 @@
 import React from "react";
-import Content from "./Content";
+import Notes from "./Notes";
 
-const ListContent = ({ content, upPost, downPost, deletePost }) => {
+const ListItem = ({ content, upPost, downPost, deletePost }) => {
   return (
     <>
       {content.map((post, index) => (
-        <Content
+        <Notes
           key={index}
           content={content}
           post={post}
@@ -19,4 +19,4 @@ const ListContent = ({ content, upPost, downPost, deletePost }) => {
   );
 };
 
-export default ListContent;
+export default ListItem;

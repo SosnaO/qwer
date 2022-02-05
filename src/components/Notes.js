@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import List from "./List";
 
-export default function Content({
+export default function Notes({
   content,
   post,
   index,
@@ -13,8 +13,7 @@ export default function Content({
   const [ind, setInd] = useState(null);
 
   return (
-    <li key={index + 1} id={index} style={{ listStyleType: "none" }}>
-      
+    <li key={index + 1} id={index}>
       {!sublist ? (
         <button
           style={{ margin: "10px" }}
@@ -40,7 +39,6 @@ export default function Content({
         {post}
       </p>
 
-    
       {index !== 0 && (
         <button
           onClick={(e) => {
@@ -52,7 +50,6 @@ export default function Content({
         </button>
       )}
 
-     
       {content.length - 1 !== index && (
         <button
           onClick={(e) => {
@@ -64,7 +61,6 @@ export default function Content({
         </button>
       )}
 
-      
       <button
         onClick={(e) => {
           let thisIndex = e.target.parentElement.getAttribute("id");
@@ -75,7 +71,6 @@ export default function Content({
         Delete
       </button>
 
-   
       <div>
         {sublist && ind === index ? (
           <button
