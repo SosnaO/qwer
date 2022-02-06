@@ -6,8 +6,8 @@ const List = () => {
   const [post, setPost] = useState("");
   const [posts, setPosts] = useState([]);
 
-  function onChange(arr, a, b) {
-    arr[a] = arr.splice(b, 1, arr[a])[0];
+  function onChange(total, a, b) {
+    total[a] = total.splice(b, 1, total[a])[0];
   }
 
   const addPost = () => {
@@ -25,14 +25,14 @@ const List = () => {
   };
 
   const upPost = (index) => {
-    let arr = [...posts];
-    onChange(arr, index, Number(index) - 1);
-    setPosts(arr);
+    let total = [...posts];
+    onChange(total, index, Number(index) - 1);
+    setPosts(total);
   };
   const downPost = (index) => {
-    let arr1 = [...posts];
-    onChange(arr1, index, Number(index) + 1);
-    setPosts(arr1);
+    let total = [...posts];
+    onChange(total, index, Number(index) + 1);
+    setPosts(total);
   };
 
   return (
@@ -43,7 +43,7 @@ const List = () => {
         downPost={downPost}
         deletePost={deletePost}
       />
-      <li>
+      <li style={{ listStyleType: "none" }}>
         <Form setPost={setPost} post={post} addPost={addPost} />
       </li>
     </ul>
