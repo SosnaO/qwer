@@ -43,7 +43,7 @@ const List = () => {
         downPost={downPost}
         deletePost={deletePost}
       />
-      <li style={{ listStyleType: "none" }}>
+      <li>
         <Form setPost={setPost} post={post} addPost={addPost} />
       </li>
     </ul>
