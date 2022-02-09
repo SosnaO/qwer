@@ -10,7 +10,7 @@ export default function Notes({
   deletePost,
 }) {
   const [sublist, setSublist] = useState(false);
-  const [ind, setInd] = useState(null);
+  const [del, setDel] = useState(null);
 
   return (
     <li key={index + 1} id={index}>
@@ -19,7 +19,7 @@ export default function Notes({
           style={{ margin: "10px" }}
           onClick={(e) => {
             let thisIndex = e.target.parentElement.getAttribute("id");
-            setInd(Number(thisIndex));
+            setDel(Number(thisIndex));
             setSublist(true);
           }}
         >
@@ -72,18 +72,18 @@ export default function Notes({
       </button>
 
       <div>
-        {sublist && ind === index ? (
+        {sublist && del === index ? (
           <button
             style={{ display: "inline-block", marginRight: "15px" }}
             onClick={(e) => {
               setSublist(false);
-              setInd(null);
+              setDel(null);
             }}
           >
             deleteSublist
           </button>
         ) : undefined}
-        {sublist && ind === index && <List />}
+        {sublist && del === index && <List />}
       </div>
     </li>
   );
