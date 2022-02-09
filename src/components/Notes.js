@@ -18,8 +18,7 @@ export default function Notes({
         <button
           style={{ margin: "10px" }}
           onClick={(e) => {
-            let thisIndex = e.target.parentElement.getAttribute("id");
-            setDel(Number(thisIndex));
+            setDel(Number(e.target.parentElement.getAttribute("id")));
             setSublist(true);
           }}
         >
@@ -42,8 +41,7 @@ export default function Notes({
       {index !== 0 && (
         <button
           onClick={(e) => {
-            let thisIndex = e.target.parentElement.getAttribute("id");
-            upPost(thisIndex);
+            upPost(e.target.parentElement.getAttribute("id"));
           }}
         >
           UP
@@ -53,8 +51,7 @@ export default function Notes({
       {content.length - 1 !== index && (
         <button
           onClick={(e) => {
-            let thisIndex = e.target.parentElement.getAttribute("id");
-            downPost(thisIndex);
+            downPost(e.target.parentElement.getAttribute("id"));
           }}
         >
           DOWN
@@ -63,8 +60,7 @@ export default function Notes({
 
       <button
         onClick={(e) => {
-          let thisIndex = e.target.parentElement.getAttribute("id");
-          deletePost(thisIndex);
+          deletePost(e.target.parentElement.getAttribute("id"));
           setSublist(false);
         }}
       >
