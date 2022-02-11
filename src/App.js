@@ -3,7 +3,7 @@ import List from "./components/List";
 
 function App() {
   return (
-    <div>
+    <div style={{ backgroundColor: "#FFF8DC", width: "100%" }}>
       <List />
     </div>
   );

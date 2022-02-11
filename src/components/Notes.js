@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import List from "./List";
+import styles from "./styles.module.css";
 
 export default function Notes({
   content,
@@ -16,7 +17,7 @@ export default function Notes({
     <li key={index + 1} id={index}>
       {!sublist ? (
         <button
-          style={{ margin: "10px" }}
+          className={styles.btn}
           onClick={(e) => {
             setDel(Number(e.target.parentElement.getAttribute("id")));
             setSublist(true);
@@ -25,21 +26,10 @@ export default function Notes({
           addSublist
         </button>
       ) : undefined}
-
-      <p
-        style={{
-          display: "inline-block",
-          minWidth: "150px",
-          border: "1px solid",
-          margin: "0",
-          marginRight: "5px",
-        }}
-      >
-        {post}
-      </p>
-
+      <p className={styles.text}>{post}</p>
       {index !== 0 && (
         <button
+          className={styles.btn}
           onClick={(e) => {
             upPost(e.target.parentElement.getAttribute("id"));
           }}
@@ -50,6 +40,7 @@ export default function Notes({
 
       {content.length - 1 !== index && (
         <button
+          className={styles.btn}
           onClick={(e) => {
             downPost(e.target.parentElement.getAttribute("id"));
           }}
@@ -59,6 +50,7 @@ export default function Notes({
       )}
 
       <button
+        className={styles.btn}
         onClick={(e) => {
           deletePost(e.target.parentElement.getAttribute("id"));
           setSublist(false);
@@ -70,7 +62,7 @@ export default function Notes({
       <div>
         {sublist && del === index ? (
           <button
-            style={{ display: "inline-block", marginRight: "15px" }}
+            className={styles.btn}
             onClick={(e) => {
               setSublist(false);
               setDel(null);

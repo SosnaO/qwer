@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ListItem from "./ListItem";
 import Form from "./Form/Form";
-
+import styles from "./styles.module.css";
 const List = () => {
   const [post, setPost] = useState("");
   const [posts, setPosts] = useState([]);
@@ -36,7 +36,7 @@ const List = () => {
   };
 
   return (
-    <ul style={{ border: "2px solid red", margin: "5px" }}>
+    <ul className={styles.sublist}>
       <ListItem
         content={posts}
         upPost={upPost}

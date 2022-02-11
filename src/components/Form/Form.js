@@ -1,9 +1,10 @@
 import React from "react";
-
+import styles from "../../components/styles.module.css";
 const Form = (props) => {
   return (
     <form>
       <input
+        className={styles.input}
         name="post"
         type="text"
         component="input"
@@ -13,6 +14,7 @@ const Form = (props) => {
         }}
       />
       <button
+        className={styles.btn}
         onClick={(e) => {
           e.preventDefault();
           props.addPost();
