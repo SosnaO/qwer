@@ -1,9 +1,9 @@
 import React from "react";
 import List from "./components/List";
-
+import styles from "../src/components/styles.module.css";
 function App() {
   return (
-    <div style={{ backgroundColor: "#FFF8DC", width: "100%" }}>
+    <div className={styles.app}>
       <List />
     </div>
   );
